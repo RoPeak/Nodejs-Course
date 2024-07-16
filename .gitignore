@@ -1,0 +1,2 @@
+# Ignore node modules (can be automatically installed with npm and package-lock.json)
+*/node_modules
