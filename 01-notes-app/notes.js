@@ -30,7 +30,6 @@ const addNote = (title, body) => {
     // (find will stop iteration once duplicate found)
     const duplicateNote = notes.find((note) => note.title === title);
 
-
     // If no duplicates found, add note
     if (!duplicateNote) {
         notes.push({
