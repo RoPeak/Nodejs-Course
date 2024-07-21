@@ -13,11 +13,11 @@ dotenv.config();
 const weatherKey = process.env.WEATHER_API_KEY;
 const geoKey = process.env.GEOCODING_API_KEY;
 
-// Base url for making requests to weatherapi.com
+// Base url for making requests to api.weatherapi.com
 const weatherURL =
   "https://api.weatherapi.com/v1/forecast.json?key=" + weatherKey;
 
-// Base url for making requests to mapbox.com
+// Base url for making requests to api.mapbox.com
 const geoURL =
   "https://api.mapbox.com/search/geocode/v6/forward?access_token=" + geoKey;
 
