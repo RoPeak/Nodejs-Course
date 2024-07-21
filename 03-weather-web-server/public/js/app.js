@@ -9,8 +9,8 @@ weatherForm.addEventListener("submit", (e) => {
 
   const userLocation = searchElement.value;
 
-  locationPara.textContent = "Loading...";
-  forecastPara.textContent = "";
+  locationPara.innerHTML = "<strong>Loading...</strong>";
+  forecastPara.innerHTML = "";
 
   fetch("http://localhost:3000/weather?address=" + userLocation).then(
     (response) => {
@@ -21,13 +21,15 @@ weatherForm.addEventListener("submit", (e) => {
             "Sorry, an error has occurred: '" + data.error + "'";
         } else {
           console.log(data);
-          locationPara.textContent =
-            "Location: " +
+          locationPara.innerHTML =
+            "<strong>Location:</strong><br>" +
             data.location.short +
             " (" +
             data.location.full +
             ")";
-          forecastPara.textContent = "Forecast: " + data.forecast.summary;
+          forecastPara.innerHTML =
+            "<strong>Forecast:</strong><br>" +
+            data.forecast.summary.replace(/\n/g, "<br>");
         }
       });
     }
